@@ -10,10 +10,39 @@
     {
       document.getElementById("res").value="";
     }
+    function solve()
+    {
+      var z=document.getElementById("res").value;
+      var r=eval(z);
+      document.getElementById("res").value=r;
+    }
   </script>
+<style>
+  table{
+    border-collapse:collapse;
+  }
+  input[type=button]
+  {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  input[type=text]
+  {
+    padding:15px 32px;
+    font-size:20px;
+  }
+  </style>
 </head>
   <body>
-    <table>
+    <h1 align="center">A Simple Calculator</h1>
+    </br>
+    <table border="2" align="center"cellpadding="5px"cellspacing="2px">
       <tr>
         <td colspan="3"><input type="text" id="res"/></td>
         <td><input type="button"/ value="C"onclick="dis()"></td>
@@ -39,7 +68,7 @@
               <tr>
                 <td><input type="button"value="/"onclick="display('/')"/></td>
                 <td><input type="button"value="*"onclick="display('*')""/></td>
-                <td><input type="button"value="="/></td>
+                <td><input type="button"value="="onclick="solve()"/></td>
                 <td><input type="button"value="0"onclick="display('0')"/></td>
                 </tr>
   </body>

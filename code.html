@@ -63,36 +63,57 @@
       var r=Math.pow(z);
       document.getElementById("res").value=r;
     }
+    function hide()
+    {
+      var x=document.getElementById("sci");
+      if(x.style.display=="none")
+      {
+        x.style.display="table-row-group";
+      }
+      else {
+        x.style.display="none";
+      }
+      var x=document.getElementById("sci1");
+      if(x.style.display=="none")
+      {
+        x.style.display="table-row-group";
+      }
+      else {
+        x.style.display="none";
+      }
+    }
   </script>
 <style>
-  table{
+  table
+  {
     border-collapse:collapse;
   }
   input[type=button]
   {
   border: none;
   color: black;
-  padding: 15px 32px;
+  background-color:#AEAAAA;
+  padding: 15px 20px;
+  width:100%;
   text-align: center;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
+  font-size: 24px;
   cursor: pointer;
   }
   input[type=text]
   {
-    padding:15px 32px;
+    padding:15px 20px;
     font-size:20px;
   }
   </style>
 </head>
   <body>
     <h1 align="center">A Simple Calculator</h1>
-    </br>
-    <table border="2" align="center"cellpadding="5px"cellspacing="2px">
+    <br>
+    <table border="2"align="center"cellpadding="5px"cellspacing="2px"style="background-color:#AEAAAA">
       <tr>
-        <td colspan="3"><input type="text" id="res"/></td>
-        <td><input type="button"/ value="C"onclick="dis()"></td>
+        <td colspan="3"><input type="text" id="res"style="background-color:gray;color:white;"/></td>
+        <td><input type="button" value="C"onclick="dis()"></td>
+        <td rowspan="5"><input type="button" value="<"onclick="hide()"/></td>
         </tr>
         <tr>
           <td><input type="button"value="1"onclick="display('1')"/></td>
@@ -118,18 +139,22 @@
                 <td><input type="button"value="="onclick="solve()"/></td>
                 <td><input type="button"value="0"onclick="display('0')"/></td>
                 </tr>
+                <tbody id="sci" style="display:none">
                 <tr>
                   <td><input type="button"value="log"onclick="solvelog()"/></td>
                   <td><input type="button"value="sin"onclick="solvesin()"/></td>
                   <td><input type="button"value="cos"onclick="solvecos()"/></td>
                   <td><input type="button"value="tan"onclick="solvetan()"/></td>
                   </tr>
+                  </tbody>
+                  <tbody id="sci1" style="display:none">
                   <tr>
                     <td><input type="button"value="pi"onclick="solvepi()"/></td>
                     <td><input type="button"value="e"onclick="solveexp()"/></td>
                     <td><input type="button"value="sqrt"onclick="solvesqrt()"/></td>
                     <td><input type="button"value="%"onclick="display('%')"/></td>
                     </tr>
+                    </tbody>
                     </table>
   </body>
 </html>

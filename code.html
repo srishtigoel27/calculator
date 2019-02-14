@@ -68,19 +68,24 @@
       var x=document.getElementById("sci");
       if(x.style.display=="none")
       {
+        document.getElementById("arrow").value='▲';
         x.style.display="table-row-group";
       }
       else {
+        document.getElementById("arrow").value='▼';
         x.style.display="none";
       }
       var x=document.getElementById("sci1");
       if(x.style.display=="none")
       {
+        document.getElementById("arrow").value='▲';
         x.style.display="table-row-group";
       }
       else {
+        document.getElementById("arrow").value='▼';
         x.style.display="none";
       }
+
     }
   </script>
 <style>
@@ -90,9 +95,10 @@
   }
   input[type=button]
   {
-  border: none;
-  color: black;
-  background-color:#AEAAAA;
+  border:none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  color:black;
+  border-radius:10px;
   padding: 15px 20px;
   width:100%;
   text-align: center;
@@ -109,11 +115,11 @@
   <body>
     <h1 align="center">A Simple Calculator</h1>
     <br>
-    <table border="2"align="center"cellpadding="5px"cellspacing="2px"style="background-color:#AEAAAA">
+    <table border="2"align="center"cellpadding="5px"cellspacing="2px"style="background-color:#59B5F9">
       <tr>
-        <td colspan="3"><input type="text" id="res"style="background-color:gray;color:white;"/></td>
+        <td colspan="3"><input type="text" id="res"style="color:black;border-radius:10px;"/></td>
         <td><input type="button" value="C"onclick="dis()"></td>
-        <td rowspan="5"><input type="button" value="<"onclick="hide()"/></td>
+        <td rowspan="5"><input type="button" id="arrow"value="▼" onclick="hide()"style="height:400px;"/></td>
         </tr>
         <tr>
           <td><input type="button"value="1"onclick="display('1')"/></td>

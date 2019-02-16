@@ -1,6 +1,7 @@
 table
 {
   border-collapse:collapse;
+  background-color:#59B5F9;
 }
 input[type=button]
 {
@@ -21,4 +22,21 @@ input[type=text]
 {
   padding:15px 20px;
   font-size:20px;
+}
+#res
+{
+  color:black;
+  border-radius:10px;
+}
+#arrow
+{
+  height:400px;
+}
+#sci1
+{
+  display: none;
+}
+#sci
+{
+  display: none;
 }

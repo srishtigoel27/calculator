@@ -1,7 +1,7 @@
-<!DCOTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <script >
+  <script>
     function display(v)
     {
       document.getElementById("res").value+=v;
@@ -12,9 +12,29 @@
     }
     function solve()
     {
-      var z=document.getElementById("res").value;
-        var r=eval(z);
-        document.getElementById("res").value=r;
+        var z=document.getElementById("res").value;
+        try {
+          var r=eval(z);
+          if(isNaN(r))
+          {
+            throw 'e';
+          }
+          else
+           {
+            throw r;
+          }
+        }
+      catch(err)
+      {
+        if(err==r)
+        {
+        document.getElementById("res").value=err;
+       }
+        else
+         {
+          document.getElementById("res").value=err.name;
+        }
+      }
     }
     function solvelog()
     {
@@ -87,10 +107,6 @@
       }
 
     }
-    function key()
-    {
-      document.getElementById("res").style.backgroundColor="red";
-    }
   </script>
 <style>
   table
@@ -110,7 +126,6 @@
   cursor: pointer;
   }
   input[type=button]:active {
-  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   transform: translateY(4px);
 }
   input[type=text]
@@ -125,7 +140,7 @@
     <br>
     <table border="2"align="center"cellpadding="5px"cellspacing="2px"style="background-color:#59B5F9">
       <tr>
-        <td colspan="3"><input type="text" id="res" autofocus onkeypress="key()" style="color:black;border-radius:10px;"/></td>
+        <td colspan="3"><input type="text" id="res" autofocus style="color:black;border-radius:10px;"/></td>
         <td><input type="button" value="C"onclick="dis()"></td>
         <td rowspan="5"><input type="button" id="arrow"value="▼" onclick="hide()"style="height:400px;"/></td>
         </tr>

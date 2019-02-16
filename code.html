@@ -1,189 +1,58 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <script>
-    function display(v)
-    {
-      document.getElementById("res").value+=v;
-    }
-    function dis()
-    {
-      document.getElementById("res").value="";
-    }
-    function solve()
-    {
-        var z=document.getElementById("res").value;
-        try {
-          var r=eval(z);
-          if(isNaN(r))
-          {
-            throw 'e';
-          }
-          else
-           {
-            throw r;
-          }
-        }
-      catch(err)
-      {
-        if(err==r)
-        {
-        document.getElementById("res").value=err;
-       }
-        else
-         {
-          document.getElementById("res").value=err.name;
-        }
-      }
-    }
-    function solvelog()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.log(z);
-      document.getElementById("res").value=r;
-    }
-    function solvesin()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.sin(z);
-      document.getElementById("res").value=r;
-    }
-    function solvecos()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.cos(z);
-      document.getElementById("res").value=r;
-    }
-    function solvetan()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.tan(z);
-      document.getElementById("res").value=r;
-    }
-    function solvepi()
-    {
-      var r=Math.PI;
-      document.getElementById("res").value+=r;
-    }
-    function solveexp()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.exp(z);
-      document.getElementById("res").value=r;
-    }
-    function solvesqrt()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.sqrt(z);
-      document.getElementById("res").value=r;
-    }
-    function solvepow()
-    {
-      var z=document.getElementById("res").value;
-      var r=Math.pow(z);
-      document.getElementById("res").value=r;
-    }
-    function hide()
-    {
-      var x=document.getElementById("sci");
-      if(x.style.display=="none")
-      {
-        document.getElementById("arrow").value='▲';
-        x.style.display="table-row-group";
-      }
-      else {
-        document.getElementById("arrow").value='▼';
-        x.style.display="none";
-      }
-      var x=document.getElementById("sci1");
-      if(x.style.display=="none")
-      {
-        document.getElementById("arrow").value='▲';
-        x.style.display="table-row-group";
-      }
-      else {
-        document.getElementById("arrow").value='▼';
-        x.style.display="none";
-      }
-
-    }
-  </script>
-<style>
-  table
-  {
-    border-collapse:collapse;
-  }
-  input[type=button]
-  {
-  border:none;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  color:black;
-  border-radius:10px;
-  padding: 15px 20px;
-  width:100%;
-  text-align: center;
-  font-size: 24px;
-  cursor: pointer;
-  }
-  input[type=button]:active {
-  transform: translateY(4px);
-}
-  input[type=text]
-  {
-    padding:15px 20px;
-    font-size:20px;
-  }
-  </style>
+  <script src="function.js"></script>
+  <link rel="stylesheet" href="styling.css">
 </head>
   <body>
     <h1 align="center">A Simple Calculator</h1>
     <br>
-    <table border="2"align="center"cellpadding="5px"cellspacing="2px"style="background-color:#59B5F9">
+    <table align="center"cellpadding="5px"cellspacing="2px">
       <tr>
-        <td colspan="3"><input type="text" id="res" autofocus style="color:black;border-radius:10px;"/></td>
+        <td colspan="3"><input type="text" id="res" autofocus /></td>
         <td><input type="button" value="C"onclick="dis()"></td>
-        <td rowspan="5"><input type="button" id="arrow"value="▼" onclick="hide()"style="height:400px;"/></td>
-        </tr>
-        <tr>
-          <td><input type="button"value="1"onclick="display('1')"/></td>
-          <td><input type="button"value="2"onclick="display('2')"/></td>
-          <td><input type="button"value="3"onclick="display('3')"/></td>
-          <td><input type="button"value="4"onclick="display('4')"/></td>
-          </tr>
-          <tr>
-            <td><input type="button"value="5"onclick="display('5')"/></td>
-            <td><input type="button"value="6"onclick="display('6')"/</td>
-            <td><input type="button"value="7"onclick="display('7')"/></td>
-            <td><input type="button"value="8"onclick="display('8')"/></td>
-            </tr>
-            <tr>
-              <td><input type="button"value="9"onclick="display('9')"/></td>
-              <td><input type="button"value="."onclick="display('.')"/></td>
-              <td><input type="button"value="+"onclick="display('+')"/></td>
-              <td><input type="button"value="-"onclick="display('-')"/></td>
-              </tr>
-              <tr>
-                <td><input type="button"value="/"onclick="display('/')"/></td>
-                <td><input type="button"value="*"onclick="display('*')"/></td>
-                <td><input type="button"value="="onclick="solve()"/></td>
-                <td><input type="button"value="0"onclick="display('0')"/></td>
-                </tr>
-                <tbody id="sci" style="display:none">
-                <tr>
-                  <td><input type="button"value="log"onclick="solvelog()"/></td>
-                  <td><input type="button"value="sin"onclick="solvesin()"/></td>
-                  <td><input type="button"value="cos"onclick="solvecos()"/></td>
-                  <td><input type="button"value="tan"onclick="solvetan()"/></td>
-                  </tr>
-                  </tbody>
-                  <tbody id="sci1" style="display:none">
-                  <tr>
-                    <td><input type="button"value="pi"onclick="solvepi()"/></td>
-                    <td><input type="button"value="e"onclick="solveexp()"/></td>
-                    <td><input type="button"value="sqrt"onclick="solvesqrt()"/></td>
-                    <td><input type="button"value="%"onclick="display('%')"/></td>
-                    </tr>
-                    </tbody>
-                    </table>
+        <td rowspan="5"><input type="button" id="arrow"value="▼" onclick="hide()"/></td>
+      </tr>
+      <tr>
+        <td><input type="button"value="1"onclick="display('1')"/></td>
+        <td><input type="button"value="2"onclick="display('2')"/></td>
+        <td><input type="button"value="3"onclick="display('3')"/></td>
+        <td><input type="button"value="4"onclick="display('4')"/></td>
+      </tr>
+      <tr>
+        <td><input type="button"value="5"onclick="display('5')"/></td>
+        <td><input type="button"value="6"onclick="display('6')"/</td>
+        <td><input type="button"value="7"onclick="display('7')"/></td>
+        <td><input type="button"value="8"onclick="display('8')"/></td>
+      </tr>
+      <tr>
+        <td><input type="button"value="9"onclick="display('9')"/></td>
+        <td><input type="button"value="."onclick="display('.')"/></td>
+        <td><input type="button"value="+"onclick="display('+')"/></td>
+        <td><input type="button"value="-"onclick="display('-')"/></td>
+      </tr>
+      <tr>
+        <td><input type="button"value="/"onclick="display('/')"/></td>
+        <td><input type="button"value="*"onclick="display('*')"/></td>
+        <td><input type="button"value="="onclick="solve()"/></td>
+        <td><input type="button"value="0"onclick="display('0')"/></td>
+      </tr>
+      <tbody id="sci">
+      <tr>
+        <td><input type="button"value="log"onclick="solvelog()"/></td>
+        <td><input type="button"value="sin"onclick="solvesin()"/></td>
+        <td><input type="button"value="cos"onclick="solvecos()"/></td>
+        <td><input type="button"value="tan"onclick="solvetan()"/></td>
+      </tr>
+      </tbody>
+      <tbody id="sci1">
+      <tr>
+        <td><input type="button"value="pi"onclick="solvepi()"/></td>
+        <td><input type="button"value="e"onclick="solveexp()"/></td>
+        <td><input type="button"value="sqrt"onclick="solvesqrt()"/></td>
+        <td><input type="button"value="%"onclick="display('%')"/></td>
+      </tr>
+      </tbody>
+    </table>
   </body>
 </html>
